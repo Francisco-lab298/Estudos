@@ -1,0 +1,10 @@
+Numero1 = int(input("Digite um numero inteiro: "))
+Numero2 = int(input("Digite outro numero inteiro: "))
+
+print("Soma:", Numero1 + Numero2)
+print("Subtração:", Numero1 - Numero2)
+print("Multiplicação:", Numero1 * Numero2)
+print("Divisão:", Numero1 / Numero2)
+print("Resto da divisão:", Numero1 % Numero2)
+print("Divisão inteira:", Numero1 // Numero2)
+print("Potência:", Numero1 ** Numero2)
