@@ -1,4 +1,4 @@
-# Escrita
+# Escrita #com o "with", o arquivo é fechado automaticamente após o bloco de código
 with open("usuarios.txt", "w") as arquivo:
     for i in range(3):
         nome = input("Digite seu nome: ")
