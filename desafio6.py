@@ -1,22 +1,22 @@
 pessoas = []# O código acima cria uma lista vazia chamada "pessoas". Em seguida, ele solicita ao usuário que insira o nome e a idade de três pessoas, armazenando essas informações em dicionários. Cada dicionário é adicionado à lista "pessoas". Por fim, o código imprime o nome e a idade de cada pessoa na lista, bem como a lista completa de pessoas.
 
 usuario = {}# O código acima cria um dicionário vazio chamado "usuario". Em seguida, ele solicita ao usuário que insira seu nome e idade, armazenando essas informações no dicionário. O dicionário é então adicionado à lista "pessoas".
-usuario["nome"] = input("Digite seu nome: ")
-usuario["idade"] = int(input("Digite sua idade: "))
+usuario["nome"] = input("Digite seu nome: ")# O código acima solicita ao usuário que insira seu nome e armazena essa informação no dicionário "usuario" com a chave "nome". Em seguida, ele solicita ao usuário que insira sua idade e armazena essa informação no dicionário com a chave "idade". O dicionário é então adicionado à lista "pessoas".
+usuario["idade"] = int(input("Digite sua idade: "))# O código acima solicita ao usuário que insira sua idade, converte a entrada para um número inteiro e armazena essa informação no dicionário "usuario" com a chave "idade". Em seguida, o dicionário é adicionado à lista "pessoas".
 
-usuario1 = {}
-usuario1["nome"] = input("Digite seu nome: ")
-usuario1["idade"] = int(input("Digite sua idade: "))
+usuario1 = {}# O código acima cria um dicionário vazio chamado "usuario1". Em seguida, ele solicita ao usuário que insira seu nome e idade, armazenando essas informações no dicionário. O dicionário é então adicionado à lista "pessoas".
+usuario1["nome"] = input("Digite seu nome: ")# O código acima solicita ao usuário que insira seu nome e armazena essa informação no dicionário "usuario1" com a chave "nome". Em seguida, ele solicita ao usuário que insira sua idade e armazena essa informação no dicionário com a chave "idade". O dicionário é então adicionado à lista "pessoas".
+usuario1["idade"] = int(input("Digite sua idade: "))# O código acima solicita ao usuário que insira sua idade, converte a entrada para um número inteiro e armazena essa informação no dicionário "usuario1" com a chave "idade". Em seguida, o dicionário é adicionado à lista "pessoas".
 
-usuario2 = {}
-usuario2["nome"] = input("Digite seu nome: ")
-usuario2["idade"] = int(input("Digite sua idade: "))
+usuario2 = {}# O código acima cria um dicionário vazio chamado "usuario2". Em seguida, ele solicita ao usuário que insira seu nome e idade, armazenando essas informações no dicionário. O dicionário é então adicionado à lista "pessoas".
+usuario2["nome"] = input("Digite seu nome: ")# O código acima solicita ao usuário que insira seu nome e armazena essa informação no dicionário "usuario2" com a chave "nome". Em seguida, ele solicita ao usuário que insira sua idade e armazena essa informação no dicionário com a chave "idade". O dicionário é então adicionado à lista "pessoas".
+usuario2["idade"] = int(input("Digite sua idade: "))# O código acima solicita ao usuário que insira sua idade, converte a entrada para um número inteiro e armazena essa informação no dicionário "usuario2" com a chave "idade". Em seguida, o dicionário é adicionado à lista "pessoas".
 
-pessoas.append(usuario)
-pessoas.append(usuario1)
-pessoas.append(usuario2)
+pessoas.append(usuario)# O código acima adiciona o dicionário "usuario" à lista "pessoas". Em seguida, ele adiciona os dicionários "usuario1" e "usuario2" à lista. Por fim, o código imprime o nome e a idade de cada pessoa na lista, bem como a lista completa de pessoas.
+pessoas.append(usuario1)# O código acima adiciona o dicionário "usuario1" à lista "pessoas". Em seguida, ele adiciona o dicionário "usuario2" à lista. Por fim, o código imprime o nome e a idade de cada pessoa na lista, bem como a lista completa de pessoas.
+pessoas.append(usuario2)# O código acima adiciona o dicionário "usuario2" à lista "pessoas". Por fim, o código imprime o nome e a idade de cada pessoa na lista, bem como a lista completa de pessoas.
 
-for pessoa in pessoas:
-    print(pessoa["nome"], pessoa["idade"])
+for pessoa in pessoas:# O código acima itera sobre cada dicionário na lista "pessoas" e imprime o nome e a idade de cada pessoa. Em seguida, ele imprime a lista completa de pessoas.'
+    print(pessoa["nome"], pessoa["idade"])# O código acima imprime o nome e a idade de cada pessoa na lista "pessoas". Ele acessa os valores do dicionário usando as chaves "nome" e "idade" para cada pessoa na lista.
     
 print(pessoas)# O código acima cria uma lista chamada "pessoas" e adiciona três dicionários, cada um representando um usuário com seu nome e idade. Em seguida, o código imprime o nome e a idade de cada pessoa na lista, bem como a lista completa de pessoas.
