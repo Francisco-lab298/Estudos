@@ -1,9 +1,9 @@
 # Escrita #com o "with", o arquivo é fechado automaticamente após o bloco de código
-with open("usuarios.txt", "w") as arquivo:
-    for i in range(3):
-        nome = input("Digite seu nome: ")
-        idade = input("Digite sua idade: ")
-        arquivo.write(nome + "," + idade + "\n")
+with open("usuarios.txt", "w") as arquivo:# O código acima abre o arquivo "usuarios.txt" para escrita usando o modo "w". Em seguida, ele itera três vezes usando um loop for para solicitar ao usuário que digite seu nome e idade. Para cada iteração, o nome e a idade são escritos no arquivo, separados por vírgula, e uma nova linha é adicionada após cada entrada.
+    for i in range(3):# O código acima abre o arquivo "usuarios.txt" para escrita usando o modo "w". Em seguida, ele itera três vezes usando um loop for para solicitar ao usuário que digite seu nome e idade. Para cada iteração, o nome e a idade são escritos no arquivo, separados por vírgula, e uma nova linha é adicionada após cada entrada.
+        nome = input("Digite seu nome: ")# O código acima abre o arquivo "usuarios.txt" para escrita usando o modo "w". Em seguida, ele itera três vezes usando um loop for para solicitar ao usuário que digite seu nome e idade. Para cada iteração, o nome e a idade são escritos no arquivo, separados por vírgula, e uma nova linha é adicionada após cada entrada.
+        idade = input("Digite sua idade: ")# O código acima abre o arquivo "usuarios.txt" para escrita usando o modo "w". Em seguida, ele itera três vezes usando um loop for para solicitar ao usuário que digite seu nome e idade. Para cada iteração, o nome e a idade são escritos no arquivo, separados por vírgula, e uma nova linha é adicionada após cada entrada.
+        arquivo.write(nome + "," + idade + "\n")# O código acima abre o arquivo "usuarios.txt" para escrita usando o modo "w". Em seguida, ele itera três vezes usando um loop for para solicitar ao usuário que digite seu nome e idade. Para cada iteração, o nome e a idade são escritos no arquivo, separados por vírgula, e uma nova linha é adicionada após cada entrada.
 
 # Leitura (fora do loop!)
 with open("usuarios.txt", "r") as arquivo:# O código acima abre o arquivo "usuarios.txt" para leitura usando o modo "r". Em seguida, ele itera sobre cada linha do arquivo usando um loop for. Para cada linha, ele remove os espaços em branco no início e no final da linha usando o método strip() e divide a linha em duas partes usando a vírgula como separador com o método split(","). O nome é atribuído à variável "nome" e a idade à variável "idade". Por fim, o código imprime o nome e a idade de cada usuário.
