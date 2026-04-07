@@ -1,15 +1,15 @@
-import json
+import json# Crie um programa que permita ao usuário cadastrar o nome e a idade de 3 pessoas. Armazene esses dados em um dicionário e salve-o em um arquivo JSON. Em seguida, leia o arquivo JSON e exiba os dados cadastrados.
 
-cadastro = {}
-for i in range(3):
-    nome = input("Digite o nome: ")
-    idade = int(input("Digite a idade: "))
-    cadastro[nome] = idade
+cadastro = {}# O programa irá solicitar ao usuário que digite o nome e a idade de 3 pessoas, armazenando essas informações em um dicionário chamado "cadastro". Em seguida, o dicionário será salvo em um arquivo JSON chamado "cadastro.json". Depois disso, o programa lerá o arquivo JSON e exibirá os dados cadastrados.
+for i in range(3):# O loop for é usado para repetir o processo de cadastro 3 vezes, permitindo que o usuário insira os dados de 3 pessoas diferentes. A cada iteração, o programa solicitará o nome e a idade, armazenando-os no dicionário "cadastro" com o nome como chave e a idade como valor.
+    nome = input("Digite o nome: ")# O programa solicitará ao usuário que digite o nome de uma pessoa e armazenará essa informação na variável "nome". Em seguida, o programa solicitará a idade da pessoa e armazenará essa informação na variável "idade". O nome e a idade serão então adicionados ao dicionário "cadastro", onde o nome será a chave e a idade será o valor correspondente.
+    idade = int(input("Digite a idade: "))# O programa solicitará ao usuário que digite a idade de uma pessoa e converterá essa entrada para um número inteiro usando a função int(). A idade será então armazenada na variável "idade". Em seguida, o programa adicionará o nome e a idade ao dicionário "cadastro", onde o nome será a chave e a idade será o valor correspondente.
+    cadastro[nome] = idade# O programa adicionará o nome e a idade ao dicionário "cadastro", onde o nome será a chave e a idade será o valor correspondente. Isso permitirá que os dados de cada pessoa sejam armazenados de forma organizada e acessível no dicionário.
 
-with open("cadastro.json", "w") as f:
-    json.dump(cadastro, f)
+with open("cadastro.json", "w") as f:# O programa abrirá um arquivo chamado "cadastro.json" no modo de escrita ("w"). Se o arquivo não existir, ele será criado. Se o arquivo já existir, seu conteúdo será sobrescrito. O programa usará a função json.dump() para escrever o dicionário "cadastro" no arquivo JSON, convertendo-o para o formato JSON adequado.
+    json.dump(cadastro, f)# O programa usará a função json.dump() para escrever o dicionário "cadastro" no arquivo JSON, convertendo-o para o formato JSON adequado. Isso permitirá que os dados cadastrados sejam salvos de forma estruturada e possam ser facilmente lidos posteriormente.
 
-with open("cadastro.json", "r") as f:
-    cadastro = json.load(f)
+with open("cadastro.json", "r") as f:# O programa abrirá o arquivo "cadastro.json" no modo de leitura ("r"). O programa usará a função json.load() para ler o conteúdo do arquivo JSON e convertê-lo de volta para um dicionário Python, armazenando-o na variável "cadastro". Em seguida, o programa exibirá os dados cadastrados usando a função print().
+    cadastro = json.load(f)# O programa usará a função json.load() para ler o conteúdo do arquivo JSON e convertê-lo de volta para um dicionário Python, armazenando-o na variável "cadastro". Isso permitirá que os dados cadastrados sejam acessados e exibidos posteriormente. Em seguida, o programa exibirá os dados cadastrados usando a função print().
 
-print(cadastro)
+print(cadastro)# O programa exibirá os dados cadastrados usando a função print(). Isso permitirá que o usuário veja as informações que foram inseridas e salvas no arquivo JSON. O dicionário "cadastro" será impresso na tela, mostrando os nomes e idades das pessoas cadastradas.
