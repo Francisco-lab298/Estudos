@@ -39,19 +39,19 @@ def listar():#  Verifica se a lista de usuários está vazia. Se estiver, exibe 
     print()# Exibe uma linha em branco para melhor formatação.
 
 # 🔹 Menu principal
-while True:
-    print("1 - Cadastrar")
-    print("2 - Listar")
-    print("3 - Sair")
+while True:# Inicia um loop infinito para exibir o menu principal e processar as opções do usuário.
+    print("1 - Cadastrar")# Exibe a opção para cadastrar um novo usuário.
+    print("2 - Listar")# Exibe a opção para listar os usuários cadastrados.
+    print("3 - Sair")# Exibe a opção para sair do programa.
 
-    opcao = input("Escolha uma opção: ")
+    opcao = input("Escolha uma opção: ")# Solicita ao usuário que escolha uma opção e armazena a entrada na variável 'opcao'.
 
-    if opcao == "1":
-        cadastrar()
-    elif opcao == "2":
-        listar()
-    elif opcao == "3":
-        print("Saindo...")
-        break
-    else:
-        print("Opção inválida!\n")
+    if opcao == "1":# Se a opção escolhida for "1", chama a função 'cadastrar()' para cadastrar um novo usuário.
+        cadastrar()# Se a opção escolhida for "2", chama a função 'listar()' para exibir a lista de usuários cadastrados.
+    elif opcao == "2":# Se a opção escolhida for "3", exibe uma mensagem de saída e quebra o loop para encerrar o programa.
+        listar()#
+    elif opcao == "3": #
+        print("Saindo...")# Exibe uma mensagem de saída.
+        break# Quebra o loop para encerrar o programa.
+    else:# Se a opção escolhida não for "1", "2" ou "3", exibe uma mensagem de opção inválida.
+        print("Opção inválida!\n")# Exibe uma mensagem de opção inválida e uma linha em branco para melhor formatação.
