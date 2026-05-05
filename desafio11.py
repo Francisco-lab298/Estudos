@@ -37,12 +37,34 @@ def listar():#  Verifica se a lista de usuários está vazia. Se estiver, exibe 
     for i, u in enumerate(usuarios, start=1):# Itera sobre a lista de usuários usando a função 'enumerate()' para obter o índice (começando em 1) e o usuário (um dicionário). Para cada usuário, exibe o índice, o nome e a idade formatados.
         print(f"{i}. Nome: {u['nome']} | Idade: {u['idade']}")# Exibe o índice, o nome e a idade do usuário formatados.
     print()# Exibe uma linha em branco para melhor formatação.
+def deletar():
+    if not usuarios:
+        print("Nenhum usuário cadastrado.\n")
+        return
+
+    print("\nUsuários cadastrados:")
+    for i, u in enumerate(usuarios, start=1):
+        print(f"{i}. {u['nome']} - {u['idade']}")
+
+    try:
+        indice = int(input("Digite o número do usuário que deseja deletar: "))
+
+        if 1 <= indice <= len(usuarios):
+            removido = usuarios.pop(indice - 1)
+            salvar()
+            print(f"{removido['nome']} foi removido.\n")
+        else:
+            print("Número inválido.\n")
+
+    except ValueError:
+        print("Digite apenas números.\n")
 
 # 🔹 Menu principal
 while True:# Inicia um loop infinito para exibir o menu principal e processar as opções do usuário.
-    print("1 - Cadastrar")# Exibe a opção para cadastrar um novo usuário.
-    print("2 - Listar")# Exibe a opção para listar os usuários cadastrados.
-    print("3 - Sair")# Exibe a opção para sair do programa.
+    print("1 - Cadastrar")
+    print("2 - Listar")
+    print("3 - Deletar")
+    print("4 - Sair")
 
     opcao = input("Escolha uma opção: ")# Solicita ao usuário que escolha uma opção e armazena a entrada na variável 'opcao'.
 
@@ -50,8 +72,32 @@ while True:# Inicia um loop infinito para exibir o menu principal e processar as
         cadastrar()# Se a opção escolhida for "2", chama a função 'listar()' para exibir a lista de usuários cadastrados.
     elif opcao == "2":# Se a opção escolhida for "3", exibe uma mensagem de saída e quebra o loop para encerrar o programa.
         listar()#
-    elif opcao == "3": #
+    elif opcao == "3":
+        deletar()
+    elif opcao == "4":#
         print("Saindo...")# Exibe uma mensagem de saída.
         break# Quebra o loop para encerrar o programa.
-    else:# Se a opção escolhida não for "1", "2" ou "3", exibe uma mensagem de opção inválida.
+    else:
         print("Opção inválida!\n")# Exibe uma mensagem de opção inválida e uma linha em branco para melhor formatação.
+        
+def deletar():
+    if not usuarios:
+        print("Nenhum usuário cadastrado.\n")
+        return
+
+    print("\nUsuários cadastrados:")
+    for i, u in enumerate(usuarios, start=1):
+        print(f"{i}. {u['nome']} - {u['idade']}")
+
+    try:
+        indice = int(input("Digite o número do usuário que deseja deletar: "))
+
+        if 1 <= indice <= len(usuarios):
+            removido = usuarios.pop(indice - 1)
+            salvar()
+            print(f"{removido['nome']} foi removido.\n")
+        else:
+            print("Número inválido.\n")
+
+    except ValueError:
+        print("Digite apenas números.\n")
