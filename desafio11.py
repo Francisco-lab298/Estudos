@@ -39,32 +39,32 @@ def listar():#  Verifica se a lista de usuários está vazia. Se estiver, exibe 
     print()# Exibe uma linha em branco para melhor formatação.
 def deletar():
     if not usuarios:
-        print("Nenhum usuário cadastrado.\n")
-        return
+        print("Nenhum usuário cadastrado.\n")# Verifica se a lista de usuários está vazia. Se estiver, exibe uma mensagem informando que nenhum usuário está cadastrado e retorna da função.
+        return# Retorna da função, encerrando a execução do restante do código.
 
-    print("\nUsuários cadastrados:")
-    for i, u in enumerate(usuarios, start=1):
-        print(f"{i}. {u['nome']} - {u['idade']}")
+    print("\nUsuários cadastrados:")# Exibe o cabeçalho da lista de usuários cadastrados.
+    for i, u in enumerate(usuarios, start=1):# Itera sobre a lista de usuários usando a função 'enumerate()' para obter o índice (começando em 1) e o usuário (um dicionário). Para cada usuário, exibe o índice, o nome e a idade formatados.
+        print(f"{i}. {u['nome']} - {u['idade']}")# Exibe o índice, o nome e a idade do usuário formatados.
 
-    try:
-        indice = int(input("Digite o número do usuário que deseja deletar: "))
+    try:# Tenta converter a entrada do usuário para um número inteiro. Se a conversão falhar (por exemplo, se o usuário digitar algo que não seja um número), captura a exceção ValueError e exibe uma mensagem de erro.
+        indice = int(input("Digite o número do usuário que deseja deletar: "))# Solicita ao usuário que digite o número do usuário que deseja deletar e tenta converter essa entrada para um número inteiro, armazenando o resultado na variável 'indice'.
 
-        if 1 <= indice <= len(usuarios):
-            removido = usuarios.pop(indice - 1)
-            salvar()
-            print(f"{removido['nome']} foi removido.\n")
-        else:
-            print("Número inválido.\n")
+        if 1 <= indice <= len(usuarios):# Verifica se o número digitado pelo usuário está dentro do intervalo válido (entre 1 e o número total de usuários). Se estiver, remove o usuário correspondente da lista usando o método 'pop()' e armazena o usuário removido na variável 'removido'. Em seguida, chama a função 'salvar()' para atualizar o arquivo JSON e exibe uma mensagem confirmando que o usuário foi removido.
+            removido = usuarios.pop(indice - 1)# Remove o usuário correspondente ao índice fornecido (ajustado para zero-based) da lista de usuários e armazena o usuário removido na variável 'removido'.
+            salvar()# Chama a função 'salvar()' para salvar a lista de usuários atualizada no arquivo JSON.
+            print(f"{removido['nome']} foi removido.\n")# Exibe uma mensagem confirmando que o usuário foi removido, mostrando o nome do usuário removido.
+        else:# Se o número digitado pelo usuário não estiver dentro do intervalo válido, exibe uma mensagem de número inválido.
+            print("Número inválido.\n")# Exibe uma mensagem de número inválido e uma linha em branco para melhor formatação.
 
-    except ValueError:
-        print("Digite apenas números.\n")
+    except ValueError:# Captura a exceção ValueError que ocorre quando a conversão para inteiro falha (por exemplo, se o usuário digitar algo que não seja um número) e exibe uma mensagem de erro.
+        print("Digite apenas números.\n")# Exibe uma mensagem de erro informando que o usuário deve digitar apenas números, seguida de uma linha em branco para melhor formatação.
 
 # 🔹 Menu principal
 while True:# Inicia um loop infinito para exibir o menu principal e processar as opções do usuário.
-    print("1 - Cadastrar")
-    print("2 - Listar")
-    print("3 - Deletar")
-    print("4 - Sair")
+    print("1 - Cadastrar")# Exibe as opções do menu para o usuário escolher.
+    print("2 - Listar")# Exibe as opções do menu para o usuário escolher.
+    print("3 - Deletar")# Exibe as opções do menu para o usuário escolher.
+    print("4 - Sair")# Exibe as opções do menu para o usuário escolher.
 
     opcao = input("Escolha uma opção: ")# Solicita ao usuário que escolha uma opção e armazena a entrada na variável 'opcao'.
 
@@ -72,8 +72,8 @@ while True:# Inicia um loop infinito para exibir o menu principal e processar as
         cadastrar()# Se a opção escolhida for "2", chama a função 'listar()' para exibir a lista de usuários cadastrados.
     elif opcao == "2":# Se a opção escolhida for "3", exibe uma mensagem de saída e quebra o loop para encerrar o programa.
         listar()#
-    elif opcao == "3":
-        deletar()
+    elif opcao == "3":#
+        deletar()#
     elif opcao == "4":#
         print("Saindo...")# Exibe uma mensagem de saída.
         break# Quebra o loop para encerrar o programa.
