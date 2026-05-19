@@ -80,24 +80,24 @@ while True:# Inicia um loop infinito para exibir o menu principal e processar as
     else:
         print("Opção inválida!\n")# Exibe uma mensagem de opção inválida e uma linha em branco para melhor formatação.
         
-def deletar():
-    if not usuarios:
-        print("Nenhum usuário cadastrado.\n")
-        return
+def deletar():#
+    if not usuarios:# Verifica se a lista de usuários está vazia. Se estiver, exibe uma mensagem informando que nenhum usuário está cadastrado e retorna da função.
+        print("Nenhum usuário cadastrado.\n")# Exibe uma mensagem informando que nenhum usuário está cadastrado e uma linha em branco para melhor formatação.
+        return# Retorna da função, encerrando a execução do restante do código.
 
-    print("\nUsuários cadastrados:")
-    for i, u in enumerate(usuarios, start=1):
-        print(f"{i}. {u['nome']} - {u['idade']}")
+    print("\nUsuários cadastrados:")# Exibe o cabeçalho da lista de usuários cadastrados.
+    for i, u in enumerate(usuarios, start=1):# Itera sobre a lista de usuários usando a função 'enumerate()' para obter o índice (começando em 1) e o usuário (um dicionário). Para cada usuário, exibe o índice, o nome e a idade formatados.
+        print(f"{i}. {u['nome']} - {u['idade']}")# Exibe o índice, o nome e a idade do usuário formatados.
+#
+    try:# Tenta converter a entrada do usuário para um número inteiro. Se a conversão falhar (por exemplo, se o usuário digitar algo que não seja um número), captura a exceção ValueError e exibe uma mensagem de erro.
+        indice = int(input("Digite o número do usuário que deseja deletar: "))# Solicita ao usuário que digite o número do usuário que deseja deletar e tenta converter essa entrada para um número inteiro, armazenando o resultado na variável 'indice'.
+#
+        if 1 <= indice <= len(usuarios):# Verifica se o número digitado pelo usuário está dentro do intervalo válido (entre 1 e o número total de usuários). Se estiver, remove o usuário correspondente da lista usando o método 'pop()' e armazena o usuário removido na variável 'removido'. Em seguida, chama a função 'salvar()' para atualizar o arquivo JSON e exibe uma mensagem confirmando que o usuário foi removido.
+            removido = usuarios.pop(indice - 1)# Remove o usuário correspondente ao índice fornecido (ajustado para zero-based) da lista de usuários e armazena o usuário removido na variável 'removido'.
+            salvar()# Chama a função 'salvar()' para salvar a lista de usuários atualizada no arquivo JSON.
+            print(f"{removido['nome']} foi removido.\n")# Exibe uma mensagem confirmando que o usuário foi removido, mostrando o nome do usuário removido, seguida de uma linha em branco para melhor formatação.
+        else:# Se o número digitado pelo usuário não estiver dentro do intervalo válido, exibe uma mensagem de número inválido.
+            print("Número inválido.\n")# Exibe uma mensagem de número inválido e uma linha em branco para melhor formatação.
 
-    try:
-        indice = int(input("Digite o número do usuário que deseja deletar: "))
-
-        if 1 <= indice <= len(usuarios):
-            removido = usuarios.pop(indice - 1)
-            salvar()
-            print(f"{removido['nome']} foi removido.\n")
-        else:
-            print("Número inválido.\n")
-
-    except ValueError:
-        print("Digite apenas números.\n")
+    except ValueError:# Captura a exceção ValueError que ocorre quando a conversão para inteiro falha (por exemplo, se o usuário digitar algo que não seja um número) e exibe uma mensagem de erro.
+        print("Digite apenas números.\n")# Exibe uma mensagem de erro informando que o usuário deve digitar apenas números, seguida de uma linha em branco para melhor formatação.
