@@ -3,19 +3,19 @@ import json
 ARQUIVO = "usuarios.json"
 
 # 🔹 Carregar dados (se existir)
-try:
+try:#
     with open(ARQUIVO, "r") as f:
         usuarios = json.load(f)
-except:
-    usuarios = []
+except:#
+    usuarios = []#
 
 # 🔹 Função para salvar
-def salvar():
-    with open(ARQUIVO, "w") as f:
-        json.dump(usuarios, f, indent=4)
+def salvar():#
+    with open(ARQUIVO, "w") as f:#
+        json.dump(usuarios, f, indent=4)#
 
 # 🔹 Cadastrar usuário
-def cadastrar():
+def cadastrar():#
     nome = input("Nome: ")
     idade = input("Idade: ")
 
