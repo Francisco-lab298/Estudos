@@ -37,7 +37,27 @@ def listar():
     for i, u in enumerate(usuarios, start=1):
         print(f"{i}. Nome: {u['nome']} | Idade: {u['idade']}")
     print()
-
+    
+# 🔹 buscar usuario
+def buscar():
+    if not usuarios:
+        print("Nenhum usuário cadastrado.\n")
+        return
+    
+    nome_busca = input("Digite o nome para buscar: ")
+    
+    Encontrado = False
+    
+    for usuario in usuarios:
+        if nome_busca in usuario["nome"].lower():
+            print("\nUsuário encontrado:")
+            print(f"Nome: {usuario['nome']}")
+            print(f"Idade: {usuario['idade']}\n")
+            Encontrado = True
+            
+    if not Encontrado:
+        print("Usuário não encontrado.\n") 
+    
 # 🔹 Editar usuário
 def editar():
     if not usuarios:
@@ -100,9 +120,10 @@ def deletar():
 while True:
     print("1 - Cadastrar")
     print("2 - Listar")
-    print("3 - Editar")
-    print("4 - Deletar")
-    print("5 - Sair")
+    print("3 - Buscar")
+    print("4 - Editar")
+    print("5 - Deletar")
+    print("6 - Sair")
 
     opcao = input("Escolha uma opção: ")
 
@@ -111,10 +132,12 @@ while True:
     elif opcao == "2":
         listar()
     elif opcao == "3":
-        editar()
+        buscar()
     elif opcao == "4":
-        deletar()
+        editar()
     elif opcao == "5":
+        deletar()
+    elif opcao == "6":
         print("Saindo...")
         break
     else:
