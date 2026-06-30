@@ -48,11 +48,11 @@ def buscar():
     
     Encontrado = False
     
-    for usuario in usuarios:
-        if nome_busca in usuario["nome"].lower():
-            print("\nUsuário encontrado:")
-            print(f"Nome: {usuario['nome']}")
-            print(f"Idade: {usuario['idade']}\n")
+    for usuario in usuarios:#
+        if nome_busca in usuario["nome"].lower():#
+            print("\nUsuário encontrado:")#
+            print(f"Nome: {usuario['nome']}")#
+            print(f"Idade: {usuario['idade']}\n")#
             Encontrado = True
             
     if not Encontrado:
@@ -118,17 +118,17 @@ def deletar():
 
 # 🔹 Menu principal
 while True:
-    print("1 - Cadastrar")
-    print("2 - Listar")
-    print("3 - Buscar")
-    print("4 - Editar")
-    print("5 - Deletar")
-    print("6 - Sair")
+    print("1 - Cadastrar")#
+    print("2 - Listar")#
+    print("3 - Buscar")#
+    print("4 - Editar")#
+    print("5 - Deletar")#
+    print("6 - Sair")#
 
-    opcao = input("Escolha uma opção: ")
+    opcao = input("Escolha uma opção: ")#
 
-    if opcao == "1":
-        cadastrar()
+    if opcao == "1":#
+        cadastrar()#
     elif opcao == "2":
         listar()
     elif opcao == "3":
